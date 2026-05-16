@@ -1,53 +1,59 @@
 # Frontend Playground
 
-A frontend playground platform where users can create, edit, preview, save, and publish HTML, CSS, and JavaScript projects with live preview and shareable URLs.
+> A lightweight, browser-based code playground to write HTML, CSS, JavaScript & Tailwind — with live preview, notes, and instant shareable URLs.
+
+🔗 **Live Demo:** [frontend-playground-two-gray.vercel.app](https://frontend-playground-two-gray.vercel.app)
 
 ---
 
-# Features
+## Features
 
-* HTML, CSS, and JavaScript editor
-* Monaco Editor integration
-* Live preview using iframe
-* Tailwind CSS support
-* Publish projects with unique URLs
-* View all published projects
-* Delete projects
-* Responsive dark UI
-
----
-
-# Tech Stack
-
-## Frontend
-
-* React
-* React Router
-* Tailwind CSS
-* Monaco Editor
-* Vite
-
-## Backend Service
-
-* Supabase
+- ✅ HTML, CSS, JavaScript & **Tailwind CSS** editor
+- ✅ Monaco Editor (VS Code-like experience)
+- ✅ **Live preview** inside sandboxed iframe
+- ✅ **Auto-run** toggle with debounce
+- ✅ **Resizable** editor & preview panels
+- ✅ **Notes tab** per project
+- ✅ Save & Publish separately
+- ✅ Shareable public URLs
+- ✅ Search & filter projects
+- ✅ Delete projects
+- ✅ Dark theme with 3D loader animation
+- ✅ Deployed on Vercel
 
 ---
 
-# Folder Structure
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React, React Router, Tailwind CSS |
+| Editor | Monaco Editor |
+| Backend | Supabase (PostgreSQL) |
+| Bundler | Vite |
+| Hosting | Vercel |
+
+---
+
+## Folder Structure
 
 ```text
 src/
 │
 ├── components/
-│   ├── PreviewFrame.jsx
+│   ├── CodeEditor.jsx
+│   └── PreviewFrame.jsx
 │
 ├── pages/
 │   ├── HomePage.jsx
 │   ├── EditorPage.jsx
-│   ├── ProjectPage.jsx
+│   └── ProjectPage.jsx
 │
 ├── lib/
-│   ├── supabase.js
+│   └── supabase.js
+│
+├── utils/
+│   └── generateCode.js
 │
 ├── App.jsx
 ├── main.jsx
@@ -56,21 +62,16 @@ src/
 
 ---
 
-# Installation
+## Installation
 
-## Clone Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/p4p-iyush/frontend-playground.git
-```
-
-## Move Into Project
-
-```bash
 cd frontend-playground
 ```
 
-## Install Dependencies
+### Install Dependencies
 
 ```bash
 npm install
@@ -78,11 +79,10 @@ npm install
 
 ---
 
-# Setup Supabase
+## Setup Supabase
 
-Create a project on Supabase.
-
-Create table:
+1. Create a project on [Supabase](https://supabase.com)
+2. Run this SQL in the Supabase SQL editor:
 
 ```sql
 create table projects (
@@ -91,15 +91,17 @@ create table projects (
   html text,
   css text,
   js text,
+  notes text,
+  published boolean default false,
   created_at timestamp default now()
 );
 ```
 
 ---
 
-# Environment Variables
+## Environment Variables
 
-Create `.env` file:
+Create a `.env` file in the root:
 
 ```env
 VITE_SUPABASE_URL=YOUR_SUPABASE_URL
@@ -108,7 +110,21 @@ VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 
 ---
 
-# Run Project
+## Vercel Deployment
+
+Create a `vercel.json` in the root for client-side routing:
+
+```json
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+```
+
+---
+
+## Run Locally
 
 ```bash
 npm run dev
@@ -116,27 +132,4 @@ npm run dev
 
 ---
 
-# Project Workflow
-
-1. Create project
-2. Write HTML, CSS, and JS code
-3. Run live preview
-4. Publish project
-5. Share generated URL
-
----
-
-# Future Improvements
-
-* Authentication
-* Edit existing projects
-* Project templates
-* File uploads
-* Custom domains
-* AI code generation
-
----
-
-# Author
-
-Piyush Jain
+## Project Workflow

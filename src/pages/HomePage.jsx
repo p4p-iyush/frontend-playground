@@ -40,7 +40,7 @@ function Footer() {
           </div>
           <div className="footer-links">
             <a
-              href="https://linkedin.com/in/YOUR_LINKEDIN_ID"
+              href="https://www.linkedin.com/in/p4piyush/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-link"
@@ -51,7 +51,7 @@ function Footer() {
               LinkedIn
             </a>
             <a
-              href="https://github.com/YOUR_GITHUB_ID"
+              href="https://github.com/p4p-iyush"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-link"
