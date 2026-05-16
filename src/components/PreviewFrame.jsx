@@ -3,8 +3,14 @@ export default function PreviewFrame({ code }) {
     <iframe
       title="preview"
       srcDoc={code}
-      sandbox="allow-scripts"
-      className="w-full h-full border-0"
+      sandbox="allow-scripts allow-same-origin"
+      style={{
+        width: '100%',
+        height: '100%',
+        border: 'none',
+        display: 'block',
+        background: '#fff',
+      }}
     />
   )
 }
