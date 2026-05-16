@@ -133,3 +133,37 @@ npm run dev
 ---
 
 ## Project Workflow
+
+Create Project → Write Code → Run Preview → Save → Publish → Share URL
+
+1. Click **New Project** on the homepage
+2. Write **HTML**, **CSS**, **JS** or use **Tailwind** classes directly
+3. Hit **▶ Run** or enable **Auto** mode for live preview
+4. Use the **Notes** tab to jot down ideas
+5. **Save** to update or **Publish** to generate a public URL
+6. Share the link — anyone can view it instantly
+
+---
+
+## Future Improvements
+
+- [ ] User authentication (GitHub OAuth)
+- [ ] Project templates (landing page, portfolio, etc.)
+- [ ] AI code generation & suggestions
+- [ ] Console output panel
+- [ ] File uploads & assets
+- [ ] Custom domains
+- [ ] Collaborative editing
+
+---
+
+## Author
+
+**Piyush Jain**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/p4piyush/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/p4p-iyush)
+
+---
+
+*Built with ❤️ using React, Monaco Editor, Supabase & Vite*
