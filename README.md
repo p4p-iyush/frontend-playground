@@ -1,18 +1,142 @@
-# React + Vite
+# Frontend Playground
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend playground platform where users can create, edit, preview, save, and publish HTML, CSS, and JavaScript projects with live preview and shareable URLs.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Features
 
-## React Compiler
+* HTML, CSS, and JavaScript editor
+* Monaco Editor integration
+* Live preview using iframe
+* Tailwind CSS support
+* Publish projects with unique URLs
+* View all published projects
+* Delete projects
+* Responsive dark UI
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+# Tech Stack
 
-## Expanding the ESLint configuration
+## Frontend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* React Router
+* Tailwind CSS
+* Monaco Editor
+* Vite
+
+## Backend Service
+
+* Supabase
+
+---
+
+# Folder Structure
+
+```text
+src/
+│
+├── components/
+│   ├── PreviewFrame.jsx
+│
+├── pages/
+│   ├── HomePage.jsx
+│   ├── EditorPage.jsx
+│   ├── ProjectPage.jsx
+│
+├── lib/
+│   ├── supabase.js
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+---
+
+# Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/p4p-iyush/frontend-playground.git
+```
+
+## Move Into Project
+
+```bash
+cd frontend-playground
+```
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+# Setup Supabase
+
+Create a project on Supabase.
+
+Create table:
+
+```sql
+create table projects (
+  id uuid default gen_random_uuid() primary key,
+  title text default 'Untitled Project',
+  html text,
+  css text,
+  js text,
+  created_at timestamp default now()
+);
+```
+
+---
+
+# Environment Variables
+
+Create `.env` file:
+
+```env
+VITE_SUPABASE_URL=YOUR_SUPABASE_URL
+VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+```
+
+---
+
+# Run Project
+
+```bash
+npm run dev
+```
+
+---
+
+# Project Workflow
+
+1. Create project
+2. Write HTML, CSS, and JS code
+3. Run live preview
+4. Publish project
+5. Share generated URL
+
+---
+
+# Future Improvements
+
+* Authentication
+* Edit existing projects
+* Project templates
+* File uploads
+* Custom domains
+* AI code generation
+
+---
+
+# Author
+
+Piyush Jain
